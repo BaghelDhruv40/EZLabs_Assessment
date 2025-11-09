@@ -3,4 +3,11 @@
 @tailwind utilities;
 
 /* Global styles can be added here */
+#scrollContainer {
+	scroll-behavior: smooth;
+	scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
 
+#scrollContainer::-webkit-scrollbar {
+	display: none; /* Hide scrollbar for Chrome, Edge, etc. */
+}

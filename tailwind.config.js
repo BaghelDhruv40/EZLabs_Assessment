@@ -2,7 +2,13 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		extend: { fontFamily: { halant: ["Halant", "serif"] } },
+		extend: {
+			fontFamily: {
+				halant: ["Halant", "serif"],
+				island: ['"Island Moments"', "cursive"],
+				vibes: ['"Great Vibes"', "cursive"],
+			},
+		},
 	},
 	plugins: [],
 };

@@ -10,6 +10,7 @@ export default defineConfig({
 				families: [
 					{ name: "Instrument Sans", styles: "wght@400;500;600" },
 					{ name: "Halant", styles: "wght@400;500;600" },
+					{ name: "Island Moments", styles: "wght@400;500;600" },
 				],
 			},
 		}),
