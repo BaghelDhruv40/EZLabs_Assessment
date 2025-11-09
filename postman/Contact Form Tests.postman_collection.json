@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "8b4a1ef9-1cc0-4a64-99e4-5e7f3a64d5c5",
+		"name": "Contact Form Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "✅ Valid Contact Form Submission",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test user\",\n  \"email\": \"testuser@gmail.com\",\n  \"phone\": \"908765498\",\n  \"message\": \"This is a message\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/contact-us/",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "contact-us", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "🚫 Empty Fields (Should Fail Validation)",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"\",\n  \"email\": \"\",\n  \"phone\": \"\",\n  \"message\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/contact-us/",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "contact-us", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "⚠️ Invalid Email Format (Front-end should block)",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"not-an-email\",\n  \"phone\": \"9876543210\",\n  \"message\": \"Testing invalid email\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/contact-us/",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "contact-us", ""]
+				}
+			},
+			"response": []
+		}
+	]
+}
